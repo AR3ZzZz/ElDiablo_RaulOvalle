@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb1e99dbbb6981346a7cb55edfc09a1c, type: 3}
+  m_Name: uhogyuo
+  m_EditorClassIdentifier: 
+  strings:
+  - klk manin, prrrr, tu tu tuuu, poo poo poooo.
+  - Mi helmano nesesito un favolsito.
+  - Tu me puede consegil unos porritoh, yo te pago miarma.
+  timeBetweenLetters: 0.02

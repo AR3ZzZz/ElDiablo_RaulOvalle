@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
-
+    [SerializeField] DialoguesSO myDialogue;
     [SerializeField] float turnTime;
 
     void Start()
@@ -20,7 +20,11 @@ public class NPC : MonoBehaviour
     
     public void Interact(Transform whoInteracts)
     {
+        transform.DOLookAt(whoInteracts.position,turnTime, AxisConstraint.Y).OnComplete(StartInteraction);
+    }
+
+    void StartInteraction()
+    {
         Debug.Log("El diablo papa klk");
-        transform.DOLookAt(whoInteracts.position,turnTime, AxisConstraint.Y);
     }
 }
