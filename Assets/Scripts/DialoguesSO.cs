@@ -7,7 +7,7 @@ using UnityEngine;
 public class DialoguesSO : ScriptableObject
 {
     [TextArea]
-    public string[] strings;
+    public string[] sentences;
 
     public float timeBetweenLetters;
 }
