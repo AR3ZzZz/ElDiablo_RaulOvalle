@@ -9,6 +9,7 @@ public class DialogueSystem : MonoBehaviour
 
     [SerializeField] GameObject dialogueFrame;
     [SerializeField] TMP_Text dailogueText;
+    [SerializeField] Transform npcCamera;
 
     bool writting;
     int currentSentenceIndex;
@@ -32,18 +33,23 @@ public class DialogueSystem : MonoBehaviour
         
     }
    
-    public void StartDialogue(DialoguesSO dialogue)
+    public void StartDialogue(DialoguesSO dialogue, Transform cameraPoint)
     {
         Time.timeScale = 0;
         currentDialogue = dialogue;
         dialogueFrame.SetActive(true);
+
+        npcCamera.SetPositionAndRotation(cameraPoint.position, cameraPoint.rotation);
+
+        StartCoroutine(WriteSentence());
     }
 
     IEnumerator WriteSentence()
     {
+        writting = true;
         char[] lettersOfSentence =  currentDialogue.sentences[currentSentenceIndex].ToCharArray();
 
-        //foreach (var letra in lettersOfSentece)
+        //foreach (var letters in lettersOfSentece)
         {
             
         }

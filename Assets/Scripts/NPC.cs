@@ -7,6 +7,7 @@ public class NPC : MonoBehaviour
 {
     [SerializeField] DialoguesSO myDialogue;
     [SerializeField] float turnTime;
+    [SerializeField] Transform cameraPoint;
 
     void Start()
     {
