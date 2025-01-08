@@ -16680,9 +16680,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5719406731118082467}
   - {fileID: 1718771792}
   - {fileID: 1235053213}
-  - {fileID: 5719406731118082467}
   - {fileID: 1615176170}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22801,6 +22801,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5719406731118082467}
+  - component: {fileID: 5719406731118082469}
+  - component: {fileID: 5719406731118082468}
   m_Layer: 0
   m_Name: EnemyVisual
   m_TagString: Untagged
@@ -23103,6 +23105,39 @@ Transform:
   - {fileID: 5896193268595369381}
   m_Father: {fileID: 1763644382}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &5719406731118082468
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4905751168266085145}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e8bfedfe37dbb75459178d91e314261b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5719406731118082469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4905751168266085145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93679f086f764494987b23d514996dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5728565791809141037
 GameObject:
   m_ObjectHideFlags: 0
