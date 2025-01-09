@@ -15847,6 +15847,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1718771792}
   - component: {fileID: 1718771793}
+  - component: {fileID: 1718771794}
   m_Layer: 0
   m_Name: PatrolSystem
   m_TagString: Untagged
@@ -15881,7 +15882,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7148ef99f784de34c9fa985166c5a308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 1763644383}
+  patrolSpeed: 0
   path: {fileID: 0}
+--- !u!135 &1718771794
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718771791}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 6
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1722529422
 GameObject:
   m_ObjectHideFlags: 0
@@ -16637,6 +16661,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1763644382}
+  - component: {fileID: 1763644383}
   - component: {fileID: 1763644381}
   m_Layer: 0
   m_Name: Enemy
@@ -16682,10 +16707,23 @@ Transform:
   m_Children:
   - {fileID: 5719406731118082467}
   - {fileID: 1718771792}
+  - {fileID: 1856492132}
   - {fileID: 1235053213}
   - {fileID: 1615176170}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1763644383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763644380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 084815de4ade2e348945529c703daace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1769328883
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17741,6 +17779,53 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1844185396}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1856492131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1856492132}
+  - component: {fileID: 1856492133}
+  m_Layer: 0
+  m_Name: CombatSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1856492132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856492131}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1763644382}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1856492133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856492131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d794bd7a74140240b2ecf332bc165d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main: {fileID: 1763644383}
+  agent: {fileID: 0}
+  combatSpeed: 0
 --- !u!1001 &1858068180
 PrefabInstance:
   m_ObjectHideFlags: 0
