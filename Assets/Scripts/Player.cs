@@ -58,4 +58,11 @@ public class Player : MonoBehaviour
 
         }
     }
+
+
+
+    public void MakeDmg(float attackDmg)
+    {
+        Debug.Log("Me golpiaron punheta" + attackDmg);
+    }
 }

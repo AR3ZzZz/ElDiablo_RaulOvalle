@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        
+        patrol.enabled = true;
     }
 
     // Update is called once per frame
@@ -30,5 +30,10 @@ public class Enemy : MonoBehaviour
         combat.enabled = true;
         this.target = target;
 
+    }
+    public void PatrolStart()
+    {
+        combat.enabled = false;
+        patrol.enabled = true;
     }
 }

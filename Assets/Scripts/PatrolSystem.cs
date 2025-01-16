@@ -26,12 +26,14 @@ public class PatrolSystem : MonoBehaviour
 
     private void OnEnable()
     {
+        agent.stoppingDistance = 0;
         agent.speed = patrolSpeed;
+        StartCoroutine(PatrolAndWait());
     }
 
     private void Start()
     {
-        StartCoroutine(PatrolAndWait());
+
     }
 
     private IEnumerator PatrolAndWait()

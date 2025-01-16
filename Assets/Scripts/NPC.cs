@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPC : MonoBehaviour
+public class NPC : MonoBehaviour, IInteractive
 {
     [SerializeField] DialoguesSO myDialogue;
     [SerializeField] float turnTime;
@@ -27,5 +27,23 @@ public class NPC : MonoBehaviour
     void StartInteraction()
     {
         Debug.Log("El diablo papa klk");
+    }
+
+    void Interaction()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            //Collider coll = Physics.OverlapSphere();
+
+            //if (coll.TryGetComponent(out IInteractive interactive))
+            //{
+            //    interactive.Interact();
+            //}
+        }
+    }
+
+    public void Interact()
+    {
+        throw new System.NotImplementedException();
     }
 }
