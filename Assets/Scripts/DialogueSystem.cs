@@ -7,6 +7,7 @@ public class DialogueSystem : MonoBehaviour
 {
     public static DialogueSystem system;
 
+    [SerializeField] EventManagerSO eventManager;
     [SerializeField] GameObject dialogueFrame;
     [SerializeField] TMP_Text dailogueText;
     [SerializeField] Transform npcCamera;
@@ -88,5 +89,11 @@ public class DialogueSystem : MonoBehaviour
         writting = false;
         currentDialogue = null;
         Time.timeScale = 1;
+
+        if (currentDialogue.hasMission)
+        {
+            eventManager.NewMission(currentDialogue.mission);
+        }
+        currentDialogue = null ;
     }
 }

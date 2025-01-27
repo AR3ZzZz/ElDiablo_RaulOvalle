@@ -8,6 +8,9 @@ public class DialoguesSO : ScriptableObject
 {
     [TextArea]
     public string[] sentences;
-
+    public AudioClip[] sounds;
     public float timeBetweenLetters;
+
+    public bool hasMission;
+    public MissionSO mission;
 }
