@@ -11,15 +11,18 @@ public class WallDetector : MonoBehaviour
         if (other.CompareTag("Obstacle"))
         {
             Material wallMaterial = other.GetComponent<MeshRenderer>().material;
-            Color tranparency = new Color(wallMaterial.color.r, wallMaterial.color.g, wallMaterial.color.b, .25f);
+            Color tranparency = new Color(wallMaterial.color.r, wallMaterial.color.g, wallMaterial.color.b, .05f);
             wallMaterial.DOColor(tranparency, colorChange);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Material wallMaterial = other.GetComponent<MeshRenderer>().material;
-        Color opaque = new Color(wallMaterial.color.r, wallMaterial.color.g, wallMaterial.color.b, 1f);
-        wallMaterial.DOColor(opaque, colorChange);
+        if (other.CompareTag("Obstacle"))
+        {
+            Material wallMaterial = other.GetComponent<MeshRenderer>().material;
+            Color opaque = new Color(wallMaterial.color.r, wallMaterial.color.g, wallMaterial.color.b, 1f);
+            wallMaterial.DOColor(opaque, colorChange);
+        }
     }
 }

@@ -2457,7 +2457,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6471486612872848663}
-  - component: {fileID: 2630599289784891431}
+  - component: {fileID: -1952026699952495605}
   - component: {fileID: 8493653867050796353}
   - component: {fileID: 8981324059003918806}
   - component: {fileID: 929705597401166592}
@@ -2476,7 +2476,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7757133824844463732}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -10.114, y: 0, z: -10.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2485,7 +2485,7 @@ Transform:
   - {fileID: 4532846742897244436}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &2630599289784891431
+--- !u!114 &-1952026699952495605
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2494,10 +2494,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 7757133824844463732}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46778dc363a4be34482e93fa0586d3f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 7605fe592f440bc49bcd801ab8c9c6bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDistance: 0
+  eventManager: {fileID: 0}
+  myMission: {fileID: 0}
+  initialDialogue: {fileID: 0}
+  lastDialogue: {fileID: 0}
+  turnTime: 0
+  cameraPoint: {fileID: 0}
+  curretDialogue: {fileID: 0}
 --- !u!54 &8493653867050796353
 Rigidbody:
   m_ObjectHideFlags: 0

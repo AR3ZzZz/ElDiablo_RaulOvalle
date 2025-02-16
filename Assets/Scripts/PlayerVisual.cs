@@ -6,12 +6,11 @@ using UnityEngine.AI;
 public class PlayerVisual : MonoBehaviour
 {
     Animator animator;
-    NavMeshAgent agent;
+    [SerializeField] NavMeshAgent agent;
 
     void Start()
     {
-        animator = GetComponent<Animator>();
-        agent = GetComponentInParent<NavMeshAgent>();
+        animator = GetComponent<Animator>();       
     }
 
     void Update()

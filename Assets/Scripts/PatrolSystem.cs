@@ -10,14 +10,13 @@ public class PatrolSystem : MonoBehaviour
     [SerializeField] float patrolSpeed;
 
     [SerializeField] Transform path;
-    NavMeshAgent agent;
+    [SerializeField] NavMeshAgent agent;
     List<Vector3> pathPointsList = new List<Vector3>();
     int currentIndex = -1;
     Vector3 currentPath;
     void Awake()
     {
         main.Patrol = this;
-        agent = GetComponent<NavMeshAgent>();
         foreach (Transform pathPoints in path)
         {
             pathPointsList.Add(pathPoints.position);
@@ -43,7 +42,7 @@ public class PatrolSystem : MonoBehaviour
             CalcularDestino();
             agent.SetDestination(currentPath);
             yield return new WaitUntil(() => agent.remainingDistance <= 0);
-            yield return Random.Range(0, 4f);
+            yield return new WaitForSeconds(Random.Range(0, 4f));
         }
     }
 
@@ -67,6 +66,7 @@ public class PatrolSystem : MonoBehaviour
         if (other.TryGetComponent(out Player player))
         {
             StopAllCoroutines();
+
             main.CombatStart(other.transform);
         }
     }

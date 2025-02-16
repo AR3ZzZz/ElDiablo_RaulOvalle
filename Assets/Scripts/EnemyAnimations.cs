@@ -6,16 +6,16 @@ using UnityEngine.AI;
 public class EnemyAnimations : MonoBehaviour
 {
     Animator animator;
-    NavMeshAgent agent;
+    [SerializeField] NavMeshAgent agent;
 
     void Start()
     {
         animator = GetComponent<Animator>();
-        agent = GetComponentInParent<NavMeshAgent>();
+        
     }
 
     void Update()
     {
-        animator.SetFloat("Velocity", agent.velocity.magnitude / agent.speed);
+        animator.SetFloat("Blend", agent.velocity.magnitude / agent.speed);
     }
 }

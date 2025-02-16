@@ -37,6 +37,7 @@ public class CombatSystem : MonoBehaviour
 
             if (!agent.pathPending && agent.remainingDistance <= attackDistance)
             {
+                agent.isStopped = true;
                 animator.SetBool("attacking", true);
             }
         }
@@ -63,6 +64,8 @@ public class CombatSystem : MonoBehaviour
     void EndAttackAnimation()
     {
         animator.SetBool("attacking", false);
+        agent.isStopped = false;
+
     }
     #endregion
 }

@@ -21,21 +21,21 @@ public class Player : MonoBehaviour
     {
         if (Time.timeScale == 0)
         {
-            PointAndClickMovement();
+
         }
-        TryToInteract();
+            TryToInteract();
+            PointAndClickMovement();
     }
 
     private void TryToInteract()
     {
-        if (lastHitted != null &&  lastHitted.TryGetComponent(out NPC npc))
+        if (lastHitted != null &&  lastHitted.TryGetComponent(out IInteractive interactable))
         {
             agent.stoppingDistance = interactionDistance;
 
             if (!agent.pathPending &&  agent.remainingDistance <= agent.stoppingDistance)
             {
-                npc.Interact(transform);
-
+                interactable.Interact(transform);
                 lastHitted = null;
             }
         }

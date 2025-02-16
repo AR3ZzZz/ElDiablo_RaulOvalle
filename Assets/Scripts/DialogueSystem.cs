@@ -9,7 +9,7 @@ public class DialogueSystem : MonoBehaviour
 
     [SerializeField] EventManagerSO eventManager;
     [SerializeField] GameObject dialogueFrame;
-    [SerializeField] TMP_Text dailogueText;
+    [SerializeField] TMP_Text dialogueText;
     [SerializeField] Transform npcCamera;
 
     bool writting;
@@ -29,10 +29,7 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        
-    }
+    
    
     public void StartDialogue(DialoguesSO dialogue, Transform cameraPoint)
     {
@@ -47,19 +44,24 @@ public class DialogueSystem : MonoBehaviour
 
     IEnumerator WriteSentence()
     {
+        //audioSource.clip = dialogoActual.frasesClips[indiceFraseActual];
+        //audioSource.Play();
+
         writting = true;
+        dialogueText.text = string.Empty;
         char[] lettersOfSentence =  currentDialogue.sentences[currentSentenceIndex].ToCharArray();
 
-        //foreach (var letters in lettersOfSentece)
+        foreach (char letters in lettersOfSentence)
         {
-            
+            dialogueText.text += letters;
+            yield return new WaitForSecondsRealtime(currentDialogue.timeBetweenLetters);
         }
-        yield return new WaitForSeconds(currentDialogue.timeBetweenLetters);
+        writting = false;
     }
 
-    void CompleteSentence()
+    public void CompleteSentence()
     {
-        dailogueText.text = currentDialogue.sentences[currentSentenceIndex];
+        dialogueText.text = currentDialogue.sentences[currentSentenceIndex];
 
         StopAllCoroutines();
 
@@ -75,6 +77,10 @@ public class DialogueSystem : MonoBehaviour
             {
                 StartCoroutine(WriteSentence());
             }
+            else
+            {
+                EndDialogue();
+            }
         }
         else
         {
@@ -84,11 +90,9 @@ public class DialogueSystem : MonoBehaviour
 
     void EndDialogue()
     {
-        dialogueFrame?.SetActive(false);
-        currentSentenceIndex = 0;
-        writting = false;
-        currentDialogue = null;
         Time.timeScale = 1;
+        currentSentenceIndex = 0;        
+        dialogueFrame?.SetActive(false);
 
         if (currentDialogue.hasMission)
         {

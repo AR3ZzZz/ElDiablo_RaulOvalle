@@ -23,6 +23,10 @@ public class NPC : MonoBehaviour, IInteractive
     {
         eventManager.OnEndMission += SwapDialogue;
     }
+    private void OnDisable()
+    {
+        
+    }
 
     private void SwapDialogue(MissionSO missionFinished)
     {
@@ -34,29 +38,11 @@ public class NPC : MonoBehaviour, IInteractive
     
     public void Interact(Transform whoInteracts)
     {
-        transform.DOLookAt(whoInteracts.position,turnTime, AxisConstraint.Y).OnComplete(StartInteraction);
+        transform.DOLookAt(whoInteracts.position,turnTime, AxisConstraint.Y).OnComplete(StartDialogue);
     }
 
-    void StartInteraction()
+    void StartDialogue()
     {
-        Debug.Log("El diablo papa klk");
-    }
-
-    void Interaction()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            //Collider coll = Physics.OverlapSphere();
-
-            //if (coll.TryGetComponent(out IInteractive interactive))
-            //{
-            //    interactive.Interact();
-            //}
-        }
-    }
-
-    public void Interact()
-    {
-        throw new System.NotImplementedException();
-    }
+        DialogueSystem.system.StartDialogue(curretDialogue, cameraPoint);
+    }     
 }

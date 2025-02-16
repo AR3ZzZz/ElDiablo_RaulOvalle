@@ -12,8 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb1e99dbbb6981346a7cb55edfc09a1c, type: 3}
   m_Name: Dialogue1
   m_EditorClassIdentifier: 
-  strings:
-  - klk manin, prrrr, tu tu tuuu, poo poo poooo.
-  - Mi helmano nesesito un favolsito.
-  - Tu me puede consegil unos porritoh, yo te pago miarma.
-  timeBetweenLetters: 0.02
+  sentences:
+  - Tienes un brillo en los ojos...
+  - '!No puede ser!'
+  - Eres un alma errante reencarnada, por favor liberanos de la bruja maldita, nos
+    ha lanzado una maldicion y ahora los habitantes de la mazmorra nos estanos volviendo
+    corruptos
+  - Confio en ti viajero, la bruja se encuentra en la ultima sala de la mazmorra
+  sounds: []
+  timeBetweenLetters: 0.05
+  hasMission: 1
+  mission: {fileID: 11400000, guid: c5488bcf0148dbc409eb7732e8b04db6, type: 2}

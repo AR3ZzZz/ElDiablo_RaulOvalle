@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c0733a67c688fd4794c87fb9d43bdd9, type: 3}
   m_Name: Mission1
   m_EditorClassIdentifier: 
-  initialOrder: Recupera 3 bandidas
-  finalOrder: Habla con el mason
-  tieneRepeticion: 1
-  repetitionTimes: 3
+  initialOrder: Kill the toxic witch
+  finalOrder: Habla con el mas
+  tieneRepeticion: 0
+  repetitionTimes: 0
   missionIndex: 0
   currentRepetition: 0
