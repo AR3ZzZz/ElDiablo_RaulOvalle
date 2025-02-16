@@ -13,7 +13,9 @@ public class CombatSystem : MonoBehaviour
     [SerializeField] float attackDistance;
     [SerializeField] float attackDmg;
     [SerializeField] Animator animator;
+    [SerializeField] GameObject fireBall;
 
+    [SerializeField] GameObject attackPoint;
     private void Awake()
     {
         main.Combat = this;   
@@ -60,6 +62,11 @@ public class CombatSystem : MonoBehaviour
     {
         //Physics.OverlapSphere();
         main.Target.GetComponent<Player>().MakeDmg(attackDmg);
+    }
+    void FireballAttack()
+    {
+        GameObject clon = fireBall;
+        Instantiate(clon, attackPoint.transform.position, quaternion.identity);
     }
     void EndAttackAnimation()
     {

@@ -19,12 +19,12 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (Time.timeScale == 0)
+        if (Time.timeScale == 1)
         {
+            PointAndClickMovement();
 
         }
             TryToInteract();
-            PointAndClickMovement();
     }
 
     private void TryToInteract()

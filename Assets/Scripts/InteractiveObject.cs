@@ -21,17 +21,10 @@ public class InteractiveObject : MonoBehaviour,IInteractive
             eventManager.EndMission(mission);
         }
 
-        Destroy(gameObject);
     }
 
-    private void Awake()
-    {
-        outline = GetComponent<Outline>();
-    }
+    
 
-    private void OnMouseEnter() => outline.enabled = true;
-
-    private void OnMouseExit() => outline.enabled = false;  
     
         
     

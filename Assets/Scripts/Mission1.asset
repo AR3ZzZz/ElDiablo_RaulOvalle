@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c0733a67c688fd4794c87fb9d43bdd9, type: 3}
   m_Name: Mission1
   m_EditorClassIdentifier: 
-  initialOrder: Kill the toxic witch
-  finalOrder: Habla con el mas
+  initialOrder: Acaba con la bruja toxica
+  finalOrder: Habla con el corrupto
   tieneRepeticion: 0
   repetitionTimes: 0
   missionIndex: 0

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 public class Cofre : MonoBehaviour, IInteractive
@@ -11,6 +12,9 @@ public class Cofre : MonoBehaviour, IInteractive
     [SerializeField] Texture2D defaultIcon;
     [SerializeField] GameObject openChest;
     [SerializeField] GameObject closedChest;
+
+    [SerializeField] private EventManagerSO eventManager;
+    [SerializeField] private MissionSO mission;
     void Start()
     {
         open = false;
@@ -37,8 +41,25 @@ public class Cofre : MonoBehaviour, IInteractive
 
     public void Interact(Transform interactor)
     {
-        open = true;
-        openChest.SetActive(true);
-        closedChest.SetActive(false);
+        
+
+
+        if (!open)
+        {
+            mission.currentRepetition++;
+
+            if (mission.currentRepetition < mission.repetitionTimes)
+            {
+                eventManager.UptadeMission(mission);
+            }
+            else
+            {
+                eventManager.EndMission(mission);
+            }
+
+            openChest.SetActive(true);
+            closedChest.SetActive(false);
+            open = true;
+        }
     }
 }
